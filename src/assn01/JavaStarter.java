@@ -4,7 +4,6 @@ public class JavaStarter {
     public static void main(String[] args){
         Scanner s= new Scanner(System.in);
         int n=s.nextInt();
-        s.nextLine();
 //task 1
         if(n==1){
             System.out.println("Hello, Universe!\n");
@@ -26,12 +25,14 @@ public class JavaStarter {
         }
 // task 4
         if(n==4){
+            s.nextLine();
     // take a string as input
             String s1= s.nextLine();
             System.out.println(stringFun1(s1));
         }
 
         if(n==5){
+            s.nextLine();
         String s1=s.nextLine();
         int i1=s.nextInt();
         int i2=s.nextInt();
