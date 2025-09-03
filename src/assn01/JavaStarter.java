@@ -7,7 +7,7 @@ public class JavaStarter {
         s.nextLine();
 //task 1
         if(n==1){
-            System.out.print("Hello, Universe!\n");
+            System.out.println("Hello, Universe!\n");
         }
 //task 2
         if(n==2){
