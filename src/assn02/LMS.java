@@ -24,6 +24,8 @@ public class LMS {
             }
 
             if (n == 1) {
+                System.out.println("Enter book title:");
+                System.out.println("Enter book author:");
                 String b = sc.nextLine();
                 String A = sc.nextLine();
                 book.add_book(b, A);
@@ -32,10 +34,12 @@ public class LMS {
                 book.display_All(book.books);
             }
             else if (n == 3) {
+                System.out.println("Enter book number to be checked out:");
                 int h = sc.nextInt() - 1; // convert to 0-based index
                 book.check_out_book(h);
             }
             else if (n == 4) {
+                System.out.println("Enter book number to be returned:");
                 int y = sc.nextInt() - 1; // convert to 0-based index
                 book.return_book(y);
             }
