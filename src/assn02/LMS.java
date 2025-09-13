@@ -29,21 +29,17 @@ public class LMS {
                 System.out.println("Enter book author:");
                 String A = sc.nextLine();
                 book.add_book(b, A);
-            }
-            else if (n == 2) {
+            } else if (n == 2) {
                 book.display_All(book.books);
-            }
-            else if (n == 3) {
-                System.out.println("Enter book number to be checked out:");
+            } else if (n == 3) {
+                System.out.println("Enter book number to check out:");
                 int h = sc.nextInt() - 1; // convert to 0-based index
                 book.check_out_book(h);
-            }
-            else if (n == 4) {
-                System.out.println("Enter book number to be returned:");
+            } else if (n == 4) {
+                System.out.println("Enter book number to return:");
                 int y = sc.nextInt() - 1; // convert to 0-based index
                 book.return_book(y);
-            }
-            else {
+            } else {
                 System.out.println("Invalid choice. Try again.");
             }
         }
@@ -51,3 +47,4 @@ public class LMS {
         sc.close();
     }
 }
+
