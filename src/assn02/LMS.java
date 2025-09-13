@@ -25,8 +25,8 @@ public class LMS {
 
             if (n == 1) {
                 System.out.println("Enter book title:");
-                System.out.println("Enter book author:");
                 String b = sc.nextLine();
+                System.out.println("Enter book author:");
                 String A = sc.nextLine();
                 book.add_book(b, A);
             }
