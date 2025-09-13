@@ -49,10 +49,10 @@ public class book {
         }
     }
 
-    public static void return_book(int j) {
-        if (j >= 0 && j < books.length && books[j] != null) {
-            if (checkedOut[j]) {
-                checkedOut[j] = false;
+    public static void return_book(int p) {
+        if (p >= 0 && p < books.length && books[p] != null) {
+            if (checkedOut[p]) {
+                checkedOut[p] = false;
                 System.out.println("Book returned!");
             } else {
                 System.out.println("Book was not checked out!");
