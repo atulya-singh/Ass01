@@ -109,17 +109,19 @@ public class LinkedList {
      */
     public void removeRepeats() {
         // TODO
-        Node ptr1=this._head;
-        Node ptr2=ptr1.getNext();
+        if(this._size!=0) {
+            Node ptr1 = this._head;
 
-        for(int i=0;i<this.size()-1;i++){
-            if(ptr1.getValue()!=ptr2.getValue()){
-                ptr1=ptr1.getNext();
+            Node ptr2 = ptr1.getNext();
+
+            for (int i = 0; i < this.size() - 1; i++) {
+                if (ptr1.getValue() != ptr2.getValue()) {
+                    ptr1 = ptr1.getNext();
+                } else {
+                    ptr1.setNext(ptr2.getNext());
+                }
+                ptr2 = ptr2.getNext();
             }
-            else{
-                ptr1.setNext(ptr2.getNext());
-            }
-            ptr2=ptr2.getNext();
         }
 
 
