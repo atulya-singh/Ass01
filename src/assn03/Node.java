@@ -1,4 +1,4 @@
-package ass03;
+package assn03;
 
 public interface Node {
 
