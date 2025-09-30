@@ -363,6 +363,7 @@ public class LinkedList {
         }
         return -1;
     }
+
     public int lastIndexOf(int element) {
         Node current = _head;
         int index = -1;
