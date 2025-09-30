@@ -176,13 +176,12 @@ public class LinkedList {
      * @param list2
      */
     public void merge(LinkedList list2) {
-        // edge case: if list2 is null or empty → do nothing
         if (list2 == null || list2._head == null) {
-            return;
+            return; // nothing to merge
         }
 
-        // edge case: if this list is empty → just adopt list2
         if (this._head == null) {
+            // if this list empty → just adopt list2
             this._head = list2._head;
             this._tail = list2._tail;
             this._size = list2._size;
@@ -193,21 +192,21 @@ public class LinkedList {
         Node curr2 = list2._head;
         Node next1, next2;
 
-        // new head should be from list1 (don’t overwrite it!)
-        // so remove: this._head = curr2;
+        // head should come from list2
+        this._head = curr2;
 
         while (curr1 != null && curr2 != null) {
             next1 = curr1.getNext();
             next2 = curr2.getNext();
 
-            curr1.setNext(curr2);
+            curr2.setNext(curr1);
 
-            // If list1 still has nodes left, link curr2 → next1
-            if (next1 != null) {
-                curr2.setNext(next1);
+            if (next2 != null) {
+                curr1.setNext(next2);
             } else {
-                // list1 ended, so remaining of list2 gets attached
-                this._tail = list2._tail;
+                // list2 ended → hook rest of list1
+                curr1.setNext(next1);
+                this._tail = this._tail == null ? curr1 : this._tail;
                 break;
             }
 
@@ -215,13 +214,17 @@ public class LinkedList {
             curr2 = next2;
         }
 
-        // update size
-        this._size += list2._size;
-        // fix tail if curr2 still has nodes left
-        if (curr2 != null) {
+        // fix tail
+        if (curr1 == null) {
             this._tail = list2._tail;
+        } else if (curr2 == null) {
+            this._tail = this._tail == null ? curr1 : this._tail;
         }
+
+        // size update
+        this._size += list2._size;
     }
+
 
 
 
