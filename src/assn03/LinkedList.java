@@ -51,7 +51,7 @@ public class LinkedList {
         if(i==0){
             Node curr=this._head;
             curr=curr.getNext();
-            this._head=this.gethead();
+            this._head=curr;
         }
         else{
             Node ptr=this._head;
